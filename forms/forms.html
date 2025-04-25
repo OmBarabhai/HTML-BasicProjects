@@ -1,103 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1, p {
+      text-align: center;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .gender-group {
+      margin-top: 10px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <h1>Student Registration Form</h1>
-  <p>Please fill out the form below to register.</p>
+  <main>
+    <h1>Student Registration Form</h1>
+    <p>Please fill out the form below to register.</p>
 
-  <form action="">
-    <fieldset>
-      <legend>Personal Information</legend>
+    <form action="#" method="post">
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
 
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" required><br><br>
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" required><br><br>
-      
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob" required><br><br>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
 
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
 
-      Gender:
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label><br><br>
-      <!-- <input type="radio" id="other" value="other">
-      <label for="other">Other</label><br><br> -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required><br><br>
-    </fieldset>
+        <div class="gender-group">
+          <span>Gender:</span>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
 
-    <fieldset>
-      <legend>Address Information</legend>
-      
-      <label for="fddress">Address:</label><br>
-      <textarea name="address" id="address" rows="3" cols="40"></textarea><br><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
 
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city" required><br><br>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label>
+        </div>
 
-      <label for="state">State:</label>
-      <input type="text" id="state" name="state" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="zip">Zip Code:</label>
-      <input type="text" id="zip" name="zip" required><br><br>
-    </fieldset>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </fieldset>
 
-    <fieldset>
-      <legend>Educational Information</legend>
-    
-      <label for="highschool">High School:</label>
-      <input type="text" id="highschool" name="highschool"><br><br>
-    
-      <label for="gpa">GPA:</label>
-      <input type="text" id="gpa" name="gpa"><br><br>
-    
-      <label for="major">Intended Major:</label>
-      <input type="text" id="major" name="major"><br><br>
-    
-      <label for="gradYear">Year of Graduation:</label>
-      <input type="number" id="gradYear" name="gradYear" min="1900" max="2100">
-    </fieldset>
+      <!-- Address Info -->
+      <fieldset>
+        <legend>Address Information</legend>
 
-    <fieldset>
-      <legend>Additional Information</legend>
-    
-      <label for="hobbies">Interests and Hobbies:</label><br>
-      <textarea id="hobbies" name="hobbies" rows="3" cols="40"></textarea><br><br>
-    
-      <label for="comments">Additional Comments:</label><br>
-      <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
-    </fieldset>
-    
-    <!-- Additional Info -->
-    <fieldset>
-      <legend>Additional Information</legend>
-      <label for="hobbies">Interests and Hobbies:</label><br>
-      <textarea id="hobbies" name="hobbies" rows="3" cols="40"></textarea><br><br>
-      <label for="comments">Additional Comments:</label><br>
-      <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
-    </fieldset>
+        <label for="address">Address:</label>
+        <textarea name="address" id="address" rows="3" required></textarea>
 
-    <!-- Submit Button -->
-    <br>
-    <input type="submit" value="Register">
-  </form>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
 
-  <!-- Footer -->
-  <br><br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" required>
+      </fieldset>
+
+      <!-- Education Info -->
+      <fieldset>
+        <legend>Educational Information</legend>
+
+        <label for="highschool">High School:</label>
+        <input type="text" id="highschool" name="highschool">
+
+        <label for="gpa">GPA:</label>
+        <input type="text" id="gpa" name="gpa">
+
+        <label for="major">Intended Major:</label>
+        <input type="text" id="major" name="major">
+
+        <label for="gradYear">Year of Graduation:</label>
+        <input type="number" id="gradYear" name="gradYear" min="1900" max="2100">
+      </fieldset>
+
+      <!-- Additional Info -->
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <label for="hobbies">Interests and Hobbies:</label>
+        <textarea id="hobbies" name="hobbies" rows="3"></textarea>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="3"></textarea>
+      </fieldset>
+
+      <input type="submit" value="Register">
+    </form>
+  </main>
+
   <footer>
-    <p>© 2024 Student Registration. All rights reserved.</p>
+    <p>&copy; 2024 Student Registration. All rights reserved.</p>
   </footer>
-</form>
 </body>
 </html>
